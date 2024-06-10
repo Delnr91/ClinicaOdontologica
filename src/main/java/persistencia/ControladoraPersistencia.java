@@ -1,5 +1,7 @@
 package persistencia;
 
+import logica.Usuario;
+
 public class ControladoraPersistencia {
       
     
@@ -10,6 +12,17 @@ public class ControladoraPersistencia {
     ResponsableJpaController respoJpa = new ResponsableJpaController();
     TurnoJpaController turnJpa = new TurnoJpaController();
     UsuarioJpaController usuJpa = new UsuarioJpaController();
+    
+    
+    
+    //metodo crear usuarios 
+    public void crearUusario(Usuario usu) {
+        
+        usuJpa.create(usu);
+        
+
+        
+    }
             
            
     
