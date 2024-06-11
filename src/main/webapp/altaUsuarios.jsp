@@ -19,7 +19,7 @@
                    placeholder="Nombre Usuario">
         </div>
         <div class="col-sm-6 mb-3">
-            <input type="password" class="form-control form-control-user" id="contrasena" name="contrsena"
+            <input type="password" class="form-control form-control-user" id="contrasena" name="contrasena"
                    placeholder="Contraseña">
         </div>
         <div class="col-sm-6 mb-3">

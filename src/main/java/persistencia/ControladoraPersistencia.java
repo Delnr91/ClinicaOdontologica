@@ -1,10 +1,10 @@
 package persistencia;
 
+import java.util.List;
 import logica.Usuario;
 
 public class ControladoraPersistencia {
-      
-    
+
     HorarioJpaController horaJpa = new HorarioJpaController();
     OdontologoJpaController odontoJpa = new OdontologoJpaController();
     PacienteJpaController paciJpa = new PacienteJpaController();
@@ -12,20 +12,18 @@ public class ControladoraPersistencia {
     ResponsableJpaController respoJpa = new ResponsableJpaController();
     TurnoJpaController turnJpa = new TurnoJpaController();
     UsuarioJpaController usuJpa = new UsuarioJpaController();
-    
-    
-    
+
     //metodo crear usuarios 
     public void crearUusario(Usuario usu) {
-        
-        usuJpa.create(usu);
-        
 
-        
+        usuJpa.create(usu);
+
     }
-            
-           
-    
-    
+
+    public List<Usuario> getUsuarios() {
+
+        return usuJpa.findUsuarioEntities();
+
+    }
 
 }
