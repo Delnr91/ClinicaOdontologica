@@ -30,13 +30,16 @@
                             <th>ID</th>
                             <th>Nombre de Usuario</th>
                             <th>Rol</th>
+                            <th style="width: 210px">Acción</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
                             <th>Nombre de Usuario</th>
-                            <th>Rol</th>
+                            <th>Rol</th>                          
+                            <th style="width: 210px">Accion </th>
+
                         </tr>
                     </tfoot>
                     <%
@@ -50,10 +53,28 @@
                             <td><%=usu.getId_usuario()%></td>
                             <td><%=usu.getNombreUsuario()%></td>
                             <td><%=usu.getRol()%></td>
+                            <td style="display: flex; width: 230px">
+
+                                <!<!-- Boton para mandar el codigo al Servlet -->
+
+                                <form name='eliminar' action="SvElimUsuarios" method="POST">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color:red; margin-right: 5px;">
+                                        <i class="fas fa-trash-alt"></i> Eliminar
+                                    </button>                                  
+                                    <input type="hidden" name="id" value="<%=usu.getId_usuario()%>">
+                                </form>  
+
+                                <form name='editar' action="SvEditUsuarios" method="GET">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block" style="margin-left: 5px;">
+                                        <i class="fas fa-pencil-alt"></i> Editar
+                                    </button>                                  
+                                    <input type="hidden" name="id" value="<%=usu.getId_usuario()%>">
+                                </form>  
+                            </td>   
                         </tr>
 
                         <% }%>
-                        
+
                     </tbody>
                 </table>
             </div>
